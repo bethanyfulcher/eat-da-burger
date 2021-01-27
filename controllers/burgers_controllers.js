@@ -15,14 +15,14 @@ router.post("/api/burgers", function(req, res) {
     ], [
         req.body.burger_name, req.body.devoured
     ], function(data) {
-        res.json({id: result.insertId})
+        res.json({id: data.insertId})
     })
 })
 
 router.put("/api/burgers/:id", function(req, res) {
     const condition = "id = " + req.params.id;
 
-    cat.update({
+    burger.update({
         devoured: req.body.devoured
     }, condition, function(result) {
         if (result.changedRows == 0) {

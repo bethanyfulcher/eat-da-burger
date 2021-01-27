@@ -32,8 +32,8 @@ function objToSql(ob) {
 const orm = {
     //  selectAll()
     all: function(tableInput, cb) {
-        let queryString = "SELECT * FROM ";
-        connection.query(queryString, {tableInput}, function(err, result) {
+        let queryString = "SELECT * FROM " + tableInput + ";";
+        connection.query(queryString, function(err, result) {
             if (err) throw err
             cb(result)
         })
@@ -48,7 +48,7 @@ const orm = {
         queryString += printQuestionMarks(values.length);
         queryString += ") "
 
-        connection.query("queryString", values, function(err, result) {
+        connection.query(queryString, values, function(err, result) {
             if (err) throw err
             cb(result)
         })
