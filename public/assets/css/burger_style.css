@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    
 }
 
 header {
@@ -8,13 +9,31 @@ header {
     background-size: auto 100vh  */
     position: fixed;
     top: 0;
+    width: 100%;
     color: white;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 main {
     position: absolute;
     top: 100vh;
     background-color: white;
+}
+
+h1 {
+    font-family: 'Bebas Neue', cursive;
+    margin-left: 20px;
+    letter-spacing: 2px;
+    font-size: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.transparent {
+    background-color: rgba(58, 58, 58, 0.6);
 }
 
 .parallax {

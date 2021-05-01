@@ -36,3 +36,14 @@ $(function() {
         )
     })
 })
+
+$(function() {
+    $(window).scroll(function() {
+        if($(this).scrollTop() > 50) {
+            $('header').addClass('transparent')
+        }
+        if($(this).scrollTop() < 50) {
+            $('header').removeClass('transparent')
+        }
+    })
+})
