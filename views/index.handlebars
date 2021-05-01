@@ -2,48 +2,119 @@
 {{!-- Create a button that will submit the user input into the database --}}
 {{!-- <div class=layer> --}}
 
-{{!-- </div> --}}
+  {{!-- </div> --}}
 <header>
-    <h1>Eat Da Burger!</h1>
+  <h1>Eat Da Burger!</h1>
 </header>
-    {{!-- <img id="header-background"/> --}}
+{{!-- <img id="header-background" /> --}}
+
+<span class="description">Create and devour unique Burgers made by you!</span>
 
 <main>
 
-<h2>Burgers that have not been eaten:</h2>
+  <section id="add-a-burger">
 
-<ul>
+    <h2>Add a Burger</h2>
+    <div id="add-content">
+      <div id="dissected-burger"></div>
+
+      {{!-- <img id="dissected-burger" src="../public/assets/img/dissected_burger.png"
+        alt="An image of a dissected Burger" /> --}}
+
+      <form class="create-form">
+
+        <div class="form-group">
+          <h3>Name Your Burger:</h3>
+          <hr>
+          <input type="text" id="burger" name="burger_name" placeholder="burger name">
+        </div>
+
+        <div class="form-group">
+          <h3>Choose your ingredients!</h3>
+          <hr>
+          <div id="ingredient-groups">
+
+            <section class="ing-group">
+            <h4>Bun:</h4>
+            <div class="checkboxes">
+              <label><input type="radio" name="bun-type" value="Sesame"> Sesame</label>
+              <label><input type="radio" name="bun-type" value="Lettuce"> Lettuce</label>
+              <label><input type="radio" name="bun-type" value="Pretzel"> Pretzel</label>
+            </div>
+            <br>
+            </section>
+
+            <section class="ing-group">
+
+            <h4>Cheese:</h4>
+            <div class="checkboxes">
+              <label><input type="radio" name="cheese-type" value=""> American</label>
+              <label><input type="radio" name="cheese-type" value=""> Cheddar</label>
+              <label><input type="radio" name="cheese-type" value=""> Swiss</label>
+              <label><input type="radio" name="cheese-type" value=""> Blue</label>
+              <label><input type="radio" name="cheese-type" value=""> Gouda</label>
+            </div>
+            </section>
+
+            <section class="ing-group">
+            <h4>Extras:</h4>
+            <div class="checkboxes">
+              <label><input type="checkbox" name="ingredients" value=""> Lettuce</label>
+              <label><input type="checkbox" name="ingredients" value=""> Onion</label>
+              <label><input type="checkbox" name="ingredients" value=""> Tomato</label>
+              <label><input type="checkbox" name="ingredients" value=""> Pickle</label>
+              <label><input type="checkbox" name="ingredients" value=""> Bacon</label>
+              <label><input type="checkbox" name="ingredients" value=""> Mushroom</label>
+              <label><input type="checkbox" name="ingredients" value=""> Pineapple</label>
+              <label><input type="checkbox" name="ingredients" value=""> Eggs</label>
+              <label><input type="checkbox" name="ingredients" value=""> Avocado</label>
+            </div>
+            </section>
+
+            <section class="ing-group">
+            <h4>Sauce:</h4>
+            <div class="checkboxes">
+              <label><input type="checkbox" name="ingredients" value=""> Mayonnaise</label>
+              <label><input type="checkbox" name="ingredients" value=""> Ketchup</label>
+              <label><input type="checkbox" name="ingredients" value=""> Mustard</label>
+              <label><input type="checkbox" name="ingredients" value=""> BBQ</label>
+              <label><input type="checkbox" name="ingredients" value=""> Tzatziki</label>
+              <label><input type="checkbox" name="ingredients" value=""> Sriracha</label>
+              <label><input type="checkbox" name="ingredients" value=""> Special</label>
+            </div>
+            </section>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <h3>Devoured?</h3><hr>
+          <input type="radio" name="devoured" value="1" checked> Devoured!
+          <input type="radio" name="devoured" value="0"> Not eaten
+        </div>
+
+        <button id="submit-btn" type="submit">Add Burger</button>
+      </form>
+    </div>
+  </section>
+
+  <h2>Burgers that have not been eaten:</h2>
+
+  <ul>
     {{#each burgers}}
-        {{#unless devoured}}
-            {{> burgers/burger-block devoured=true}}
-        {{/unless}}
+    {{#unless devoured}}
+    {{> burgers/burger-block devoured=true}}
+    {{/unless}}
     {{/each}}
-</ul>
+  </ul>
 
-<h2>Burgers that have been devoured:</h2>
+  <h2>Burgers that have been devoured:</h2>
 
-<ul>
+  <ul>
     {{#each burgers}}
-        {{#if devoured}}
-            {{> burgers/burger-block devoured=false}}
-        {{/if}}
+    {{#if devoured}}
+    {{> burgers/burger-block devoured=false}}
+    {{/if}}
     {{/each}}
-</ul>
+  </ul>
 
-<h2>Add a Burger</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="burger">Name of Burger:</label>
-    <input type="text" id="burger" name="burger_name">
-  </div>
-
-  <div class="form-group">
-    <label for="devoured">Devoured?</label><br>
-    <input type="radio" name="devoured" value="1" checked> Devoured!<br>
-    <input type="radio" name="devoured" value="0"> Not eaten
-  </div>
-
-  <button type="submit">Add Burger</button>
-</form>
 </main>
