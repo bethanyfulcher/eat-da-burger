@@ -155,7 +155,31 @@ input[type=radio] {
 
 #full-burger {
     content: url('../img/burger.png');
+}
 
+#burger-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-gap: 4rem;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.burger-tile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.burger-name {
+    text-align: center;
+    font-size: 20px;
+    color: #EEE2DC;
+}
+
+.burger-ingredients {
+    color:rgba(248, 247, 216, 0.7)
 }
 
 #add-content {
