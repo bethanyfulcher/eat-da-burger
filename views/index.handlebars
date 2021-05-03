@@ -97,7 +97,10 @@
     </div>
   </section>
 
-  <h2>Burgers that have not been eaten:</h2>
+
+  <section id="devoured-burgers">
+
+  <h2>Your Burgers:</h2>
 
   <ul>
     {{#each burgers}}
@@ -106,8 +109,9 @@
     {{/unless}}
     {{/each}}
   </ul>
+  </section>
 
-  <h2>Burgers that have been devoured:</h2>
+  <h2>Devoured Burgers:</h2>
 
   <ul>
     {{#each burgers}}
