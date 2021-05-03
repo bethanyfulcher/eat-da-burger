@@ -147,8 +147,14 @@ input[type=radio] {
     padding-bottom: 20px;
 }
 
-#devoured-burgers {
+#your-burgers {
     background-color: #2C3531;
+    color: white;
+    padding-bottom: 20px;
+}
+
+#devoured-burgers {
+    background-color: #5C2018;
     color: white;
     padding-bottom: 20px;
 }
@@ -159,7 +165,7 @@ input[type=radio] {
 
 #burger-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(160px, 272px));
     grid-gap: 4rem;
     width: 100%;
     max-width: 1280px;

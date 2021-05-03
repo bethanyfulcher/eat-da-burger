@@ -99,7 +99,7 @@
   </section>
 
 
-  <section id="devoured-burgers">
+  <section id="your-burgers">
 
     <h2>Your Burgers:</h2>
 
@@ -112,14 +112,16 @@
     </div>
   </section>
 
+  <section id="devoured-burgers">
   <h2>Devoured Burgers:</h2>
 
-  <ul>
+  <div id="burger-grid">
     {{#each burgers}}
     {{#if devoured}}
     {{> burgers/burger-block devoured=false}}
     {{/if}}
     {{/each}}
-  </ul>
+  </div>
+  </section>
 
 </main>
