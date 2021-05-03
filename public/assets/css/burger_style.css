@@ -180,6 +180,14 @@ input[type=radio] {
     content: url('../img/eaten-twice.png')
 }
 
+.unmade-burger {
+    content: url('../img/unmade-burger.png')
+}
+
+.made-once {
+    content: url('../img/made-once.png')
+}
+
 .burger-tile {
     display: flex;
     flex-direction: column;

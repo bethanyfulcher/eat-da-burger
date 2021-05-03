@@ -1,6 +1,10 @@
 <a class="burger-tile change-devoured" data-id="{{id}}" data-newdevoured="{{devoured}}">
     <p class="burger-name">{{burger_name}}</p>
+            {{#if devoured}}
           <div class="full-burger"></div>
+          {{else}}
+          <div class="unmade-burger"></div>
+          {{/if}}
 
     {{!-- <button class="change-devoured" data-id="{{id}}" data-newdevoured="{{devoured}}">
         {{#if devoured}}Eat Burger!{{else}}Make Burger{{/if}}

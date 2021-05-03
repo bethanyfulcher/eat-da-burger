@@ -1,5 +1,7 @@
 let eatenOnce = [];
 let eatenTwice = [];
+let madeOnce = [];
+let madeTwice = [];
 
 $(function() {
     $(".change-devoured").on("click", function(event) {
@@ -16,7 +18,7 @@ $(function() {
             }
             // else if burger has been clicked on only once
             else if (eatenOnce.includes(id) && !eatenTwice.includes(id)) {
-                $(this).find('div').removeClass('eatenOnce').addClass('eaten-twice')
+                $(this).find('div').removeClass('eaten-once').addClass('eaten-twice')
                 eatenTwice.push(id)
             }
             else {
@@ -39,20 +41,33 @@ $(function() {
 
         }
         else {
-            let newDevoured = $(this).data("newdevoured")
-            let newDevouredState = {
-                devoured: newDevoured
+            
+            if (!madeOnce.includes(id) && !madeTwice.includes(id)) {
+                $(this).find('div').removeClass('unmade-burger').addClass('made-once')
+                madeOnce.push(id);
             }
-    
-            $.ajax("/api/burgers/" + id, {
-                type: "PUT",
-                data: newDevouredState
-            }).then(
-                function() {
-                    console.log("changed sleep to ", newDevoured)
-                    location.reload()
+            // else if burger has been clicked on only once
+            else if (madeOnce.includes(id) && !madeTwice.includes(id)) {
+                $(this).find('div').removeClass('made-once').addClass('full-burger')
+                madeTwice.push(id)
+            }
+            else {
+                let newDevoured = $(this).data("newdevoured")
+                let newDevouredState = {
+                    devoured: newDevoured
                 }
-            )
+        
+                $.ajax("/api/burgers/" + id, {
+                    type: "PUT",
+                    data: newDevouredState
+                }).then(
+                    function() {
+                        console.log("changed sleep to ", newDevoured)
+                        location.reload()
+                    }
+                )
+
+            }
         }
     })
 
