@@ -159,7 +159,7 @@ input[type=radio] {
     padding-bottom: 20px;
 }
 
-#full-burger {
+.full-burger {
     content: url('../img/burger.png');
 }
 
@@ -170,6 +170,14 @@ input[type=radio] {
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
+}
+
+.eaten-once {
+    content: url('../img/eaten-once.png') 
+}
+
+.eaten-twice {
+    content: url('../img/eaten-twice.png')
 }
 
 .burger-tile {

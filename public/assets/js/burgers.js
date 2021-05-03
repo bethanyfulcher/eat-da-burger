@@ -1,21 +1,59 @@
+let eatenOnce = [];
+let eatenTwice = [];
+
 $(function() {
     $(".change-devoured").on("click", function(event) {
         let id = $(this).data("id");
-        let newDevoured = $(this).data("newdevoured")
-
-        let newDevouredState = {
-            devoured: newDevoured
-        }
-
-        $.ajax("/api/burgers/" + id, {
-            type: "PUT",
-            data: newDevouredState
-        }).then(
-            function() {
-                console.log("changed sleep to ", newDevoured)
-                location.reload()
+        console.log($(this).data('newdevoured'))
+        console.log(eatenOnce)
+        // if the burger has not been devoured
+        if($(this).data('newdevoured')) {
+            console.log($(this))
+            // if the burger has not been clicked on
+            if (!eatenOnce.includes(id) && !eatenTwice.includes(id)) {
+                $(this).find('div').removeClass('full-burger').addClass('eaten-once')
+                eatenOnce.push(id);
             }
-        )
+            // else if burger has been clicked on only once
+            else if (eatenOnce.includes(id) && !eatenTwice.includes(id)) {
+                $(this).find('div').removeClass('eatenOnce').addClass('eaten-twice')
+                eatenTwice.push(id)
+            }
+            else {
+                let newDevoured = $(this).data("newdevoured")
+                let newDevouredState = {
+                    devoured: newDevoured
+                }
+        
+                $.ajax("/api/burgers/" + id, {
+                    type: "PUT",
+                    data: newDevouredState
+                }).then(
+                    function() {
+                        console.log("changed sleep to ", newDevoured)
+                        location.reload()
+                    }
+                )
+
+            }
+
+        }
+        else {
+            let newDevoured = $(this).data("newdevoured")
+            let newDevouredState = {
+                devoured: newDevoured
+            }
+    
+            $.ajax("/api/burgers/" + id, {
+                type: "PUT",
+                data: newDevouredState
+            }).then(
+                function() {
+                    console.log("changed sleep to ", newDevoured)
+                    location.reload()
+                }
+            )
+        }
     })
 
     $(".create-form").on("submit", function(event) {
