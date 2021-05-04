@@ -73,11 +73,26 @@ $(function() {
 
     $(".create-form").on("submit", function(event) {
         event.preventDefault()
+        let ingredientsStr = ""
+
+        let checkedBun = $('[name=bun-type]:checked').val();
+        ingredientsStr = ingredientsStr + checkedBun;
+
+        let checkedCheese = $('[name=cheese-type]:checked').val();
+        ingredientsStr = ingredientsStr + ", " + checkedCheese
+
+        let extrasArr = $('[type=checkbox]:checked');
+        for (let i=0; i < extrasArr.length; i++) {
+                ingredientsStr = ingredientsStr + ", " + extrasArr[i].value
+        }
+
+        console.log(ingredientsStr)
 
         let newBurger = {
             burger_name: $("#burger").val().trim(),
-            devoured: $("[name=devoured]:checked").val()
-        }
+            devoured: $("[name=devoured]:checked").val(),
+            ingredients: ingredientsStr
+        };
 
         $.ajax("/api/burgers", {
             type: "POST",

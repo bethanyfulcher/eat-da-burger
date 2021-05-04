@@ -11,6 +11,7 @@ CREATE TABLE burgers
     burger_name VARCHAR(255) NOT NULL,
 --  devoured: a boolean
     devoured BOOLEAN DEFAULT false,
+    ingredients VARCHAR(255) NOT NULL,
     PRIMARY KEY (id)
 );
 -- Run in mysql server
