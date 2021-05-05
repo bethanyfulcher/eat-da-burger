@@ -16,6 +16,12 @@ header {
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
     z-index: 3;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.left {
+    margin-right: auto;
 }
 
 main {
@@ -23,8 +29,30 @@ main {
     top: 100vh;
     background-color: white;
     width: 100%;
-    font-family: 'Montserrat', sans-serif;
-    
+    font-family: 'Montserrat', sans-serif; 
+}
+
+nav {
+    /* justify-self: flex-end; */
+    font-family: 'Bebas Neue', cursive;
+    margin-right: 40px;
+    letter-spacing: 2px;
+    font-size: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    align-self: center;
+}
+
+.nav-link {
+    margin-left: 20px;
+    color:rgb(212, 211, 211);
+    text-decoration: none;
+    transition: all 500ms;
+}
+
+.nav-link:hover {
+    color: white;
+    font-size: 50px;
 }
 
 h1 {
