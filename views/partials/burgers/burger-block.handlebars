@@ -1,15 +1,12 @@
-<a class="burger-tile change-devoured" data-id="{{id}}" data-newdevoured="{{devoured}}">
+<div class="burger-tile" data-id="{{id}}" data-newdevoured="{{devoured}}">
     <p class="burger-name">{{burger_name}}</p>
             {{#if devoured}}
-          <div class="full-burger"></div>
+          <div class="change-devoured full-burger" data-id="{{id}}" data-newdevoured="{{devoured}}"></div>
           {{else}}
-          <div class="unmade-burger"></div>
+          <div class="change-devoured unmade-burger" data-id="{{id}}" data-newdevoured="{{devoured}}"></div>
           {{/if}}
 
-    {{!-- <button class="change-devoured" data-id="{{id}}" data-newdevoured="{{devoured}}">
-        {{#if devoured}}Eat Burger!{{else}}Make Burger{{/if}}
-    </button> --}}
     <p class="burger-ingredients">
         {{ingredients}}
     </p>
-</a>
+</div>

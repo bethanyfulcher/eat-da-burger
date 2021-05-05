@@ -6,6 +6,7 @@ let madeTwice = [];
 $(function() {
     $(".change-devoured").on("click", function(event) {
         let id = $(this).data("id");
+        console.log($(this).data("id"))
         console.log($(this).data('newdevoured'))
         console.log(eatenOnce)
         // if the burger has not been devoured
@@ -13,12 +14,12 @@ $(function() {
             console.log($(this))
             // if the burger has not been clicked on
             if (!eatenOnce.includes(id) && !eatenTwice.includes(id)) {
-                $(this).find('div').removeClass('full-burger').addClass('eaten-once')
+                $(this).removeClass('full-burger').addClass('eaten-once')
                 eatenOnce.push(id);
             }
             // else if burger has been clicked on only once
             else if (eatenOnce.includes(id) && !eatenTwice.includes(id)) {
-                $(this).find('div').removeClass('eaten-once').addClass('eaten-twice')
+                $(this).removeClass('eaten-once').addClass('eaten-twice')
                 eatenTwice.push(id)
             }
             else {
@@ -43,12 +44,12 @@ $(function() {
         else {
             
             if (!madeOnce.includes(id) && !madeTwice.includes(id)) {
-                $(this).find('div').removeClass('unmade-burger').addClass('made-once')
+                $(this).removeClass('unmade-burger').addClass('made-once')
                 madeOnce.push(id);
             }
             // else if burger has been clicked on only once
             else if (madeOnce.includes(id) && !madeTwice.includes(id)) {
-                $(this).find('div').removeClass('made-once').addClass('full-burger')
+                $(this).removeClass('made-once').addClass('full-burger')
                 madeTwice.push(id)
             }
             else {
