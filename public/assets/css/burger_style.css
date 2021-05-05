@@ -158,14 +158,6 @@ footer {
     flex-direction: column;
 }
 
-.form-group {
-    margin-bottom: 20px;
-    border: 5px solid grey;
-    border-radius: 5%;
-    padding-bottom: 23px;
-    padding-left: 23px;
-    padding-right: 23px;
-}
 
 #submit-btn {
     border:0.1em solid #FFFFFF;
@@ -260,7 +252,7 @@ footer {
 #add-content {
     display: flex;
     justify-content: space-evenly;
-
+    
 }
 
 #dissected-burger {
@@ -272,9 +264,70 @@ footer {
     content: url('../img/dissected_burger.png');
 }
 
-#burger {
-    font-size: 20px;
+ .form-group {
+     position: relative;
+    margin-bottom: 20px;
+    border: 5px solid grey;
+    border-radius: 5%;
+    padding-bottom: 23px;
+    padding-left: 23px;
+    padding-right: 23px; 
+  padding: 15px 25px 30px 25px;
+  margin-top: 10px;
 }
+
+
+.form__field {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid white;
+    outline: 0;
+    font-size: 1.3rem;
+    color: white;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+
+.form__field::placeholder {
+    color: transparent
+}
+
+.form__field:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+}
+
+.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: white;
+}
+
+.form__field:focus ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #9b9b9b;
+}
+
+.form__field:focus {
+    padding-bottom: 6px;
+    border-width: 3px;
+    border-color: #9b9b9b;
+}
+
+.form__field:required, .form__field:invalid{
+    box-shadow: none;
+} 
+
 
 #ingredient-groups {
     display: flex;

@@ -28,10 +28,11 @@
 
       <form class="create-form">
 
-        <div class="form-group">
-          <h3>Name Your Burger:</h3>
-          <hr>
-          <input type="text" id="burger" name="burger_name" placeholder="burger name">
+        <div class="form-group" id="name-group">
+          {{!-- <h3>Name Your Burger:</h3>
+          <hr> --}}
+          <input type="input" id="burger" class="form__field" placeholder="Burger Name" name="burger_name" required>
+          <label for="burger_name" class="form__label"><i class="fas fa-edit"></i> Burger Name</label>
         </div>
 
         <div class="form-group">
