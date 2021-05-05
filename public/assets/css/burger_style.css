@@ -1,3 +1,6 @@
+html {
+    width: 100vw;
+}
 body {
     margin: 0;
     
@@ -59,6 +62,27 @@ input[type=checkbox] {
 input[type=radio] {
     transform: scale(1.5);
 }
+
+footer {
+    /* position: absolute; */
+    /* bottom: 0; */
+    width: 100%;
+    background-color: rgb(58, 58, 58);
+    font-size: 20px;
+    padding: 30px;
+    text-align: center;
+    color: white;
+}
+
+#spacer-footer {
+    background-image: linear-gradient(rgba(0,0,0, .5), rgba(0,0,0,.5)), url('../img/burger\ background.jpg');
+    height: 30vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .transparent {
     background-color: rgba(58, 58, 58, 0.6);
 }
@@ -70,6 +94,7 @@ input[type=radio] {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    width: 100vw;
 }
 
 .description {
@@ -231,3 +256,47 @@ input[type=radio] {
 .ing-group {
     margin: 0 10px;
 }
+
+/* link in footer */ 
+.underline {
+    --line: rgb(224, 223, 223);
+    --color: white;
+    text-decoration: none;
+    color: var(--color);
+    position: relative;
+}
+.underline span {
+        background-image: linear-gradient(0deg, var(--line) 0%, var(--line) 100%);
+        background-position: 100% 100%;
+        background-repeat: no-repeat;
+        background-size: var(--background-size, 100%) 1px;
+        transition: background-size .2s linear var(--background-delay, .15s);
+        font-size: 16px;
+        line-height: 20px;
+        transform: translateZ(0);
+    }
+.underline svg {
+        vertical-align: top;
+        display: inline;
+        line-height: 1;
+        width: 13px;
+        height: 20px;
+        position: relative;
+        left: -2px;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 1px;
+        stroke: var(--line);
+        stroke-dasharray: 7.95 30;
+        stroke-dashoffset: var(--stroke-dashoffset, 46);
+        transition: stroke-dashoffset var(--stroke-duration, .15s) var(--stroke-easing, linear) var(--stroke-delay, 0s);
+}
+.underline:hover {
+        --background-size: 0%;
+        --background-delay: 0s;
+        --stroke-dashoffset: 26;
+        --stroke-duration: .3s;
+        --stroke-easing: cubic-bezier(.3, 1.5, .5, 1);
+        --stroke-delay: .195s;
+    }

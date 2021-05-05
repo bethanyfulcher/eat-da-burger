@@ -37,9 +37,9 @@
             <section class="ing-group">
               <h4>Bun:</h4>
               <div class="checkboxes">
-                <label><input type="radio" name="bun-type" value="Sesame"> Sesame</label>
-                <label><input type="radio" name="bun-type" value="Lettuce"> Lettuce</label>
-                <label><input type="radio" name="bun-type" value="Pretzel"> Pretzel</label>
+                <label><input type="radio" name="bun-type" value="Sesame" checked> Sesame Bun</label>
+                <label><input type="radio" name="bun-type" value="Lettuce"> Lettuce Wrap</label>
+                <label><input type="radio" name="bun-type" value="Pretzel"> Pretzel Bun</label>
               </div>
               <br>
             </section>
@@ -48,11 +48,12 @@
 
               <h4>Cheese:</h4>
               <div class="checkboxes">
+                <label><input type="radio" name="cheese-type" value="Cheddar" checked> Cheddar</label>
                 <label><input type="radio" name="cheese-type" value="American"> American</label>
-                <label><input type="radio" name="cheese-type" value="Cheddar"> Cheddar</label>
                 <label><input type="radio" name="cheese-type" value="Swiss"> Swiss</label>
                 <label><input type="radio" name="cheese-type" value="Blue"> Blue</label>
                 <label><input type="radio" name="cheese-type" value="Gouda"> Gouda</label>
+                <label><input type="radio" name="cheese-type" value="Gouda"> No Cheese</label>
               </div>
             </section>
 
@@ -89,8 +90,8 @@
         <div class="form-group">
           <h3>Devoured?</h3>
           <hr>
-          <input type="radio" name="devoured" value="1" checked> Devoured!
-          <input type="radio" name="devoured" value="0"> Not eaten
+          <input type="radio" name="devoured" value="0" checked> Not eaten
+          <input type="radio" name="devoured" value="1" > Devoured!
         </div>
 
         <button id="submit-btn" type="submit">Add Burger</button>
@@ -124,4 +125,9 @@
   </div>
   </section>
 
+<div class="parallax" id="spacer-footer"></div>
+
+<footer>
+  Created By: <a target="_blank" class="underline" href="https://github.com/bethanyfulcher"><span>bethanyfulcher</span><svg viewBox="0 0 13 20"><polyline points="0.5 19.5 3 19.5 12.5 10 3 0.5" /></svg></a>
+</footer>
 </main>
