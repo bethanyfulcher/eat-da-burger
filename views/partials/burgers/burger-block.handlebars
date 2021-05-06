@@ -1,5 +1,9 @@
 <div class="burger-tile" data-id="{{id}}" data-newdevoured="{{devoured}}">
+    <div class="burger-header">
+
     <p class="burger-name">{{burger_name}}</p>
+    <button class="delete-burger" data-id="{{id}}">X</button>
+    </div>
             {{#if devoured}}
           <div class="change-devoured full-burger" data-id="{{id}}" data-newdevoured="{{devoured}}"></div>
           {{else}}

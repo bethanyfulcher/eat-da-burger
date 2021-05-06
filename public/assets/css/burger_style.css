@@ -270,6 +270,32 @@ footer {
     text-align: center;
     font-size: 20px;
     color: #EEE2DC;
+    justify-self: center;
+    margin: auto;
+    /* position: absolute;  */
+    /* right: 0; */
+    /* top: 0; */
+    /* float: center; */
+}
+
+.delete-burger {
+    justify-self: right;
+    align-self:flex-start;
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 20px;
+    /* float: right; */
+}
+
+.burger-header {
+    /* position: relative; */
+    display: flex;
+    justify-content: flex-end;
+}
+
+.change-devoured {
+    margin-top: 16px;
 }
 
 .burger-ingredients {

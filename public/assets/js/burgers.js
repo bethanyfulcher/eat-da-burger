@@ -3,14 +3,14 @@ let eatenTwice = [];
 let madeOnce = [];
 let madeTwice = [];
 
-$(function() {
-    $(".change-devoured").on("click", function(event) {
+$(function () {
+    $(".change-devoured").on("click", function (event) {
         let id = $(this).data("id");
         console.log($(this).data("id"))
         console.log($(this).data('newdevoured'))
         console.log(eatenOnce)
         // if the burger has not been devoured
-        if($(this).data('newdevoured')) {
+        if ($(this).data('newdevoured')) {
             console.log($(this))
             // if the burger has not been clicked on
             if (!eatenOnce.includes(id) && !eatenTwice.includes(id)) {
@@ -27,12 +27,12 @@ $(function() {
                 let newDevouredState = {
                     devoured: newDevoured
                 }
-        
+
                 $.ajax("/api/burgers/" + id, {
                     type: "PUT",
                     data: newDevouredState
                 }).then(
-                    function() {
+                    function () {
                         console.log("changed sleep to ", newDevoured)
                         location.reload()
                     }
@@ -42,7 +42,7 @@ $(function() {
 
         }
         else {
-            
+
             if (!madeOnce.includes(id) && !madeTwice.includes(id)) {
                 $(this).removeClass('unmade-burger').addClass('made-once')
                 madeOnce.push(id);
@@ -57,12 +57,12 @@ $(function() {
                 let newDevouredState = {
                     devoured: newDevoured
                 }
-        
+
                 $.ajax("/api/burgers/" + id, {
                     type: "PUT",
                     data: newDevouredState
                 }).then(
-                    function() {
+                    function () {
                         console.log("changed sleep to ", newDevoured)
                         location.reload()
                     }
@@ -72,7 +72,7 @@ $(function() {
         }
     })
 
-    $(".create-form").on("submit", function(event) {
+    $(".create-form").on("submit", function (event) {
         event.preventDefault()
         let ingredientsStr = ""
 
@@ -83,8 +83,8 @@ $(function() {
         ingredientsStr = ingredientsStr + ", " + checkedCheese
 
         let extrasArr = $('[type=checkbox]:checked');
-        for (let i=0; i < extrasArr.length; i++) {
-                ingredientsStr = ingredientsStr + ", " + extrasArr[i].value
+        for (let i = 0; i < extrasArr.length; i++) {
+            ingredientsStr = ingredientsStr + ", " + extrasArr[i].value
         }
 
         console.log(ingredientsStr)
@@ -99,19 +99,34 @@ $(function() {
             type: "POST",
             data: newBurger
         }).then(
-            function() {
+            function () {
                 location.reload()
+            }
+        )
+    })
+
+    $(".delete-burger").on("click", function (event) {
+        var id = $(this).data("id");
+        console.log(id)
+
+        // Send the DELETE request
+        $.ajax("./api/burgers/" + id, {
+            type: "DELETE"
+        }).then(
+            function () {
+                console.log("deleted cat", id)
+                location.reload();
             }
         )
     })
 })
 
-$(function() {
-    $(window).scroll(function() {
-        if($(this).scrollTop() > 50) {
+$(function () {
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 50) {
             $('header').addClass('transparent')
         }
-        if($(this).scrollTop() < 50) {
+        if ($(this).scrollTop() < 50) {
             $('header').removeClass('transparent')
         }
     })
