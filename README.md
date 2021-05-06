@@ -14,6 +14,12 @@ You can find the deployed site here: https://eat-da-burger-bf.herokuapp.com/
 ## Installation:
 To install, first clone the repository, then open MySQL workbench. Find the schema.sql and copy all the text from into workbench to set up the database. Lastly, within the application terminal, run 'npm install' to download all necessary npm packages. 
 
+## Built With: 
+- [Handlebars.js](https://handlebarsjs.com/) - templating language
+- [Node.js](https://nodejs.org/en/) - JavaScript runtime environment
+- [Express.js](https://expressjs.com/) - Backend framework
+- [MySQL](https://www.mysql.com/) - Database management system
+
 ## Questions:
 Contact me with any questions!
 - Github: [github.com/bethanyfulcher](https://github.com/bethanyfulcher)
